@@ -1,0 +1,10 @@
+database:
+  WORDPRESS_DATABASE_HOST: mariadb-service
+
+  MARIADB_USER: hng_wordpress
+
+  MARIADB_DATABASE: hng11_wordpress
+
+  MARIADB_PASSWORD: aG5nMTFfMjAyNA==
+
+name: dev

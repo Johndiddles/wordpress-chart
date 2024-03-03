@@ -1,0 +1,26 @@
+apiVersion: v1
+
+kind: ConfigMap
+
+metadata:
+  name: wordpress-{{ .Values.name }}-config
+
+data:
+  WORDPRESS_DATABASE_HOST: "{{ .Values.database.WORDPRESS_DATABASE_HOST }}"
+
+  MARIADB_USER: "{{ .Values.database.MARIADB_USER }}"
+
+  MARIADB_DATABASE: "{{ .Values.database.MARIADB_DATABASE }}"
+
+---
+apiVersion: v1
+
+kind: Secret
+
+metadata:
+  name: wordpress-secrets
+
+type: Opaque
+
+data:
+  MARIADB_PASSWORD: "{{ .Values.database.MARIADB_PASSWORD }}"
